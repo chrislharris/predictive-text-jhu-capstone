@@ -2,6 +2,10 @@
 
 This project contains the code and data necessary to create and run the shiny app located [here](https://chris-harris.shinyapps.io/predictive_text_R_capstone/).
 
+This app performs predictive. It has been trained on various corpora, including news, blogs, and Twitter, so that once you input some text it will offer top 5 predictions of what the next word should be.
+
+The app implements a [Katz's backoff model](https://en.wikipedia.org/wiki/Katz%27s_back-off_model) with stupid backoff. For example, given 2 words, we look at a list of top 3-grams and top 2-grams that could complete those 2 words. We compute the probabilities in each case of the 3-gram occuring and also "back off" and compute the probability of the 2-gram occuring with the discount.
+
 The files in this project include:
 * ui.R - This is the user-interface definition for the Shiny web application.
 * server.R - This is the server logic for the Shiny web application.
